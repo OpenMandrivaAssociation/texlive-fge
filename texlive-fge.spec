@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/fge
+# catalog-date 2009-03-12 01:27:31 +0100
+# catalog-license lppl
+# catalog-version 1.22
 Name:		texlive-fge
 Version:	1.22
 Release:	1
@@ -56,6 +62,7 @@ The fonts are provided as MetaFont source and Adobe Type 1
 #- source
 %doc %{_texmfdistdir}/source/fonts/fge/fge.dtx
 %doc %{_texmfdistdir}/source/fonts/fge/fge.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -66,3 +73,5 @@ The fonts are provided as MetaFont source and Adobe Type 1
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
