@@ -1,11 +1,11 @@
-# revision 15878
+# revision 24732
 # category Package
 # catalog-ctan /fonts/fge
-# catalog-date 2009-03-12 01:27:31 +0100
+# catalog-date 2011-11-18 06:50:27 +0100
 # catalog-license lppl
-# catalog-version 1.22
+# catalog-version 1.24
 Name:		texlive-fge
-Version:	1.22
+Version:	1.24
 Release:	1
 Summary:	A font for Frege's Grundgesetze der Arithmetik
 Group:		Publishing
@@ -18,28 +18,25 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
-The fonts are provided as MetaFont source and Adobe Type 1
+The fonts are provided as Metafont source and Adobe Type 1
 (pfb) files. A small LaTeX package (fge) is included.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
