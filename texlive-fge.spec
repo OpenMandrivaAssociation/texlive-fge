@@ -23,16 +23,8 @@ Requires(post):	texlive-kpathsea
 The fonts are provided as Metafont source and Adobe Type 1
 (pfb) files. A small LaTeX package (fge) is included.
 
-%pre
-    %{_sbindir}/texlive.post
-
 %post
     %{_sbindir}/texlive.post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-    fi
 
 %postun
     if [ $1 -eq 0 ]; then
@@ -60,7 +52,6 @@ The fonts are provided as Metafont source and Adobe Type 1
 #- source
 %doc %{_texmfdistdir}/source/fonts/fge/fge.dtx
 %doc %{_texmfdistdir}/source/fonts/fge/fge.ins
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -71,5 +62,3 @@ The fonts are provided as Metafont source and Adobe Type 1
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
