@@ -62,3 +62,21 @@ The fonts are provided as Metafont source and Adobe Type 1
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.24-2
++ Revision: 751833
+- Rebuild to reduce used resources
+
+* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.24-1
++ Revision: 739750
+- texlive-fge
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.22-1
++ Revision: 718429
+- texlive-fge
+- texlive-fge
+- texlive-fge
+- texlive-fge
+
