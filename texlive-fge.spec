@@ -5,8 +5,8 @@
 # catalog-license lppl
 # catalog-version 1.24
 Name:		texlive-fge
-Version:	1.24
-Release:	10
+Version:	1.25
+Release:	1
 Summary:	A font for Frege's Grundgesetze der Arithmetik
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/fge
