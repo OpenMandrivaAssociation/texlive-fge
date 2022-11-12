@@ -1,19 +1,13 @@
-# revision 24732
-# category Package
-# catalog-ctan /fonts/fge
-# catalog-date 2011-11-18 06:50:27 +0100
-# catalog-license lppl
-# catalog-version 1.24
 Name:		texlive-fge
-Version:	1.25
-Release:	2
+Version:	37628
+Release:	1
 Summary:	A font for Frege's Grundgesetze der Arithmetik
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/fge
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fge.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fge.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fge.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fge.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fge.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fge.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -24,12 +18,12 @@ The fonts are provided as Metafont source and Adobe Type 1
 (pfb) files. A small LaTeX package (fge) is included.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -55,28 +49,11 @@ The fonts are provided as Metafont source and Adobe Type 1
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.24-2
-+ Revision: 751833
-- Rebuild to reduce used resources
-
-* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.24-1
-+ Revision: 739750
-- texlive-fge
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.22-1
-+ Revision: 718429
-- texlive-fge
-- texlive-fge
-- texlive-fge
-- texlive-fge
-
