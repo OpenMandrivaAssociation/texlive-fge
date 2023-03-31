@@ -1,6 +1,6 @@
 Name:		texlive-fge
 Version:	37628
-Release:	1
+Release:	2
 Summary:	A font for Frege's Grundgesetze der Arithmetik
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/fge
