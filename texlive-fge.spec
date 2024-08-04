@@ -1,5 +1,5 @@
 Name:		texlive-fge
-Version:	68353
+Version:	71737
 Release:	1
 Summary:	A font for Frege's Grundgesetze der Arithmetik
 Group:		Publishing
